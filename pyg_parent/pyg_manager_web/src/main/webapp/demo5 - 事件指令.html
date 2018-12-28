@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>demo5-事件指令</title>
+    <meta charset="UTF-8">
+    <script src="plugins/angularjs/angular.min.js"></script>
+    <script>
+        //建立模块
+        var app = angular.module("myApp", []);//中括号里是需要引入的其她模块
+        //创建控制器 $Scope就是控制层和视图层之间交换数据的桥梁
+        app.controller("myCon", function ($scope) {
+            $scope.add = function () {
+                $scope.z= parseInt($scope.x) + parseInt($scope.y);
+            }
+        });
+
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCon" ng-init="x='0';y='0'">
+
+第一个数:<input ng-model="x">
+<br>
+第二个数:<input ng-model="y">
+<br>
+<button ng-click="add()">运算</button>
+运算结果:{{z}}
+
+<br>
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>demo6 - 循环数组</title>
+    <meta charset="UTF-8">
+    <script src="plugins/angularjs/angular.min.js"></script>
+    <script>
+        //建立模块
+        var app = angular.module("myApp", []);//中括号里是需要引入的其她模块
+        //创建控制器 $Scope就是控制层和视图层之间交换数据的桥梁
+        app.controller("myCon", function ($scope) {
+
+            $scope.list=[100,101,102,103,104];
+
+        });
+
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCon" ng-init="x='0';y='0'">
+
+<table>
+    <tr ng-repeat="x in list">
+        <td>{{x}}</td>
+    </tr>
+</table>
+
+<br>
+
+
+
+</body>
+</html>
